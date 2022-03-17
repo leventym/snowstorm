@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.card-image-top {
+  padding-top: 20px;
+  width: 350px;
+  height: 335px;
+  border: none;
+}
+
+.container{
+  width: 376px;
+  height: 619px;
+  -webkit-box-shadow: 2px 2px 2px 2px rgb(220, 220, 220); 
+  -moz-box-shadow:    2px 2px 2px 2px #ccc;  
+  box-shadow:         2px 2px 2px 2px #ccc;  
+}
+
+.card{
+  border: none;
+  align-items: center;
+  font-weight: lighter;
+
+}
+.title{
+  font-weight: lighter;
+  color: gray;
+}
+.card--text{
+  font-weight: lighter;
+  margin: 15px;
+  margin-bottom: 0px;
+}

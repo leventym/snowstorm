@@ -26,7 +26,7 @@ function App() {
   const [search, setSearch] = useState([]);
   useEffect(() => {
     setSearch(getCities());
-  }, [getCities()]);
+  }, []);
   return (
     <div className="App">
       <header className="App-header">

@@ -1,32 +1,37 @@
 import LastSearched from "./utils/LastSearched/LastSearched.js";
 import React, { useEffect, useState } from "react";
 
-function getCities() {
-  let cities = [];
-  for (let i = 0; i < localStorage.length; i++) {
-    let temp = localStorage.getItem(localStorage.key(i));
-    let cityObj = { Key: temp, Value: temp };
-    cities.push(cityObj);
-  }
-  return cities;
-}
-
-function addCity() {
-  //get city input value
-  const city = document.getElementById("cityText").value.trim();
-
-  if (localStorage.getItem(city) == null || localStorage.getItem(city) == "") {
-    localStorage.setItem(city, city);
-  }
-
-  getCities();
-}
-
 function App() {
-  const [search, setSearch] = useState([]);
+  const [cities, setCities] = useState([]);
+
   useEffect(() => {
-    setSearch(getCities());
+    getCities();
   }, []);
+
+  function getCities() {
+    let temp = [];
+    for (let i = 0; i < localStorage.length; i++) {
+      let cityObj = localStorage.getItem(localStorage.key(i));
+      temp.push(cityObj);
+    }
+
+    setCities(temp);
+  }
+
+  function addCity() {
+    //get city input value
+    const city = document.getElementById("cityText").value.trim();
+
+    if (
+      localStorage.getItem(city) == null ||
+      localStorage.getItem(city) == ""
+    ) {
+      localStorage.setItem(city, city);
+    }
+
+    getCities();
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -35,7 +40,7 @@ function App() {
           Click here
         </button>
 
-        <LastSearched cities={search} />
+        <LastSearched cities={cities} />
       </header>
     </div>
   );

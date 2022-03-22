@@ -3,15 +3,18 @@ import React, { useEffect, useState } from "react";
 class LastSearched extends React.Component {
   render() {
     let search = this.props.cities;
+    console.log(search);
     return (
       <ul>
         {search.map((city) => (
-          <li key={city.Key}>{city.Value}</li>
+          <li key={city}>{city}</li>
         ))}
       </ul>
     );
   }
 }
+
+
 
 // function LastSearched(props) {
 //     const [search, setSearch] = useState(props.cities);

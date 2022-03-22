@@ -22,8 +22,8 @@ function LastSearched(props) {
     const city = document.getElementById("cityText").value.trim();
 
     if (
-      localStorage.getItem(city) == null ||
-      localStorage.getItem(city) == ""
+      localStorage.getItem(city) === null ||
+      localStorage.getItem(city) === ""
     ) {
       localStorage.setItem(city, city);
     }

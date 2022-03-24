@@ -15,6 +15,7 @@ export default function Geolocation() {
             setPos([position.coords.latitude, position.coords.longitude])
         })
     })
+
     const getLocation = async () => {  
             const response = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${key}&q=${pos[0]}%2C${pos[1]}`);
             const data = await response.json();
@@ -41,7 +42,7 @@ export default function Geolocation() {
         
         <div className="geo">
             <div className="geo--card">
-                <button className="geo--button" onClick={getLocalWeather}>Där du är</button>
+                <button className="geo--btn" onClick={getLocalWeather}>Där du är</button>
                 
                 <h5>{location}</h5>
                 {localWeather.WeatherText ? <h5>{localWeather.WeatherText}</h5> : null}

@@ -1,3 +1,4 @@
+import LastSearched from "./components/LastSearched/LastSearched.js";
 import React from "react";
 import "./SearchBar.css"
 import SearchBar from "./components/Geolocation/SearchBar";
@@ -8,8 +9,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      </header>
         <SearchBar />
         <Card />
+        <LastSearched/>
         </header>
         <div className="cities">
         <BigCities city="Longyearbyen" />

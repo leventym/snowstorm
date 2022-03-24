@@ -1,3 +1,6 @@
+import React from "react";
+import "./SearchBar.css"
+import SearchBar from "./components/Geolocation/SearchBar";
 import Card from "./components/Card/Card";
 import BigCities from "./components/BigCities/BigCities";
 
@@ -5,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <SearchBar />
         <Card />
         </header>
         <div className="cities">

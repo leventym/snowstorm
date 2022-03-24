@@ -5,7 +5,7 @@ import Geolocation from "../Geolocation/Geolocation";
 
 function HeadComponent() {
 
-    const apiKey = 'IhuWC2KGme0zeezZJuBpgOh3JrDNxL26'
+    const apiKey = 'asYR1vouPBrsWDLvHuxRw55envEYujJ5'
     
       return (
         <div className="App">

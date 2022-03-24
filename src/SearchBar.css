@@ -1,0 +1,31 @@
+.searchInputs {
+    margin-top: 100px;
+    display: flex;
+  }
+  
+  .search input {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 0;
+    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 18px;
+    padding: 15px;
+    height: 10px;
+    width: 200px;
+  }
+  
+  .btn {
+    display: inline-block;
+    background: rgba(93, 181, 253, 0.418);
+    color: rgb(5, 5, 5);
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    font-family: inherit;
+  }

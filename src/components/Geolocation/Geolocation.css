@@ -1,0 +1,18 @@
+.geo--card{
+    margin: 10px;
+    background-color: rgb(173, 187, 187);
+    width: 200px;
+    height: 300px;
+    text-align: center;
+}
+
+.geo--button{
+    width: 100px;
+    height: 30px;
+    border-radius: 7px;
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 5px;
+    background-color: rgb(120, 152, 184);
+    color: aliceblue;
+}

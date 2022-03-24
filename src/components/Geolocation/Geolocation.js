@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import './Geolocation.css';
 
-export default function Geolocation() {    
+export default function Geolocation(props) {    
 
-    const key = 'GAYJdZs9O3oiKGC0GGeQYkyQE83C06AE';
+    // const key = 'GAYJdZs9O3oiKGC0GGeQYkyQE83C06AE';
     // const key = 'M2CnSr9c7j4vgM4jJBRSxt2jsAekQvbS'; //OLIVIASNOM
     const [pos, setPos] = useState([null, null])
     const [localWeather, setLocalWeather] = useState({});  
@@ -14,20 +14,21 @@ export default function Geolocation() {
         navigator.geolocation.getCurrentPosition((position) =>{
             setPos([position.coords.latitude, position.coords.longitude])
         })
-    })
+    }, []);
 
     const getLocation = async () => {  
-            const response = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${key}&q=${pos[0]}%2C${pos[1]}`);
+            const response = await fetch(`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${props.apiKey}&q=${pos[0]}%2C${pos[1]}`);
             const data = await response.json();
+            console.log(data);
             console.log(pos[0], pos[1]);
-            setLocation(data.ParentCity.LocalizedName);
+            setLocation(data.LocalizedName);
             locationKey = data.Key;
             console.log(locationKey);
             return locationKey;
         };
     
     const getWeather = async () => {
-        const response = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${key}`);
+        const response = await fetch(`http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${props.apiKey}`);
         const data = await response.json();
         setLocalWeather(data[0]);
     }

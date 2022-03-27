@@ -8,7 +8,7 @@ function Card(props) {
 
   <div className="container">
     <div className="card">
-    <img src={props.isDayTime ? `/assets/img/day.svg` : `/assets/img/night.svg`} 
+    <img src={props.isDayTime ? `/assets/img/day.png` : `/assets/img/night.png`} 
       className="time card-image-top" alt="https://via.placeholder.com/150"/>
 
       <div className="icon bg-light mx-auto text-center">

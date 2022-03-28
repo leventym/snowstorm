@@ -45,10 +45,9 @@ export default function Geolocation(props) {
         <div className="geo">
             <div className="geo--card">
                 <button className="geo--btnn" onClick={getLocalWeather}>Nuvarande position</button>
-                
                 <h5>{location}</h5>
                 {localWeather.WeatherText ? <h5>{localWeather.WeatherText}</h5> : null}
-                {localWeather.WeatherText ? <p>{localWeather.Temperature.Metric.Value} C</p> : null}
+                {localWeather.WeatherText ? <p>{localWeather.Temperature.Metric.Value} °C</p> : null}
 
             </div>
         </div>

@@ -5,6 +5,7 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+  margin-top: 10px;
 }
 
 .App-header {
@@ -30,11 +31,7 @@ body {
     -o-background-size:cover;
     background-size:cover;
     background-position:center;
-  
-  
 }
-
-
 
 body {
   margin: 0;
@@ -50,7 +47,6 @@ code {
     monospace;
 }
 
-
 .cities{
   width: 100%;
   display: flex;
@@ -58,5 +54,10 @@ code {
   top: 0;
   flex-wrap: wrap;
   position: sticky;
-  
+}
+
+.snowstorm{
+  font-weight: lighter;
+  color: white;
+  font-size: 60px;
 }

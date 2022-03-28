@@ -13,13 +13,12 @@
     
 }
 .geo--btnn{
-    border-radius: 10px;
     text-align: center;
     background-color: white;
     background-color: transparent;
     color: rgb(5, 5, 5);
     border: none;
-    padding: 0px 20px;
+    padding: 0px 0px;
     margin: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -28,5 +27,5 @@
     font-family: inherit;
     height: 45px;
     width: 100px;
-    
+    margin-bottom: 18px;
 }

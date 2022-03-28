@@ -5,10 +5,11 @@ import Geolocation from "../Geolocation/Geolocation";
 
 function HeadComponent() {
 
-    const apiKey = 'AVNRiXSZXL4Dm5NLrAXXKaeujZQnvYUn'
+    const apiKey = 'IhuWC2KGme0zeezZJuBpgOh3JrDNxL26'
 
       return (
         <div className="App">
+          <h1 className="snowstorm">SNOWSTORM WEATHER</h1>
           <header className="App-header">
             <Geolocation 
             apiKey={apiKey}/>

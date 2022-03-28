@@ -27,10 +27,6 @@ function HeadComponent() {
             apiKey={apiKey}/>
             <BigCities city="Hanoi"
             apiKey={apiKey} />
-            {/* <BigCities city="Rome"
-            apiKey={apiKey} />
-            <BigCities city="Berlin"
-            apiKey={apiKey} /> */}
         </div>
         </div>
       );

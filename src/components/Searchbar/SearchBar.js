@@ -15,6 +15,7 @@ function SearchBar(props) {
   const [weatherText, setweatherText] = React.useState("");
   const [weatherIcon, setWeatherIcon] = React.useState("");
   const [isDayTime, setIsDayTime] = React.useState("");
+
  
  
   React.useEffect(() => {
@@ -43,6 +44,7 @@ function SearchBar(props) {
   setIsDayTime(data[0].IsDayTime);
   setTemperature(data[0].Temperature.Metric.Value);
   setweatherText(data[0].WeatherText);
+
         return data[0]
 
     }
@@ -104,6 +106,12 @@ function SearchBar(props) {
         <b>Senaste sökningar</b>
           {cities.map((city) => (
           <li key={city}>{city}</li>
+
+          
+          <li key={city} onClick={(city) => {
+            localStorage.removeItem(city.target.innerText);
+            getCities();
+          }}>{city}</li>
         ))}
       </ul>
       

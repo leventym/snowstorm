@@ -97,7 +97,11 @@ function SearchBar(props) {
         <h1>Previous searches</h1>
         <ul>
         {cities.map((city) => (
-          <li key={city}>{city}</li>
+          
+          <li key={city} onClick={(city) => {
+            localStorage.removeItem(city.target.innerText);
+            getCities();
+          }}>{city}</li>
         ))}
       </ul>
     </div>

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './Geolocation.css';
 
+
 export default function Geolocation(props) {    
 
     // const key = 'GAYJdZs9O3oiKGC0GGeQYkyQE83C06AE';
@@ -43,11 +44,10 @@ export default function Geolocation(props) {
         
         <div className="geo">
             <div className="geo--card">
-                <button className="geo--btn" onClick={getLocalWeather}>Där du är</button>
-                
+                <button className="geo--btnn" onClick={getLocalWeather}>Nuvarande position</button>
                 <h5>{location}</h5>
                 {localWeather.WeatherText ? <h5>{localWeather.WeatherText}</h5> : null}
-                {localWeather.WeatherText ? <p>{localWeather.Temperature.Metric.Value} C</p> : null}
+                {localWeather.WeatherText ? <p>{localWeather.Temperature.Metric.Value} °C</p> : null}
 
             </div>
         </div>

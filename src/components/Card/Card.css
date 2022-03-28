@@ -1,26 +1,31 @@
 .card-image-top {
-    padding-top: 20px;
-    width: 350px;
-    height: 335px;
-    border: none;
-  }
+  padding-top: 20px;
+  width: 300px;
+  height:170px;
+  border: none;
+}
   
   .container{
-    width: 400px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+             
   }
   
   .card{
-      margin-top: 35px;;
-      padding: 10px;
+      margin-top: 5px;;
+      padding: 0px;
       padding-bottom: 40px;
     border: none;
     align-items: center;
     font-weight: lighter;
     -webkit-box-shadow: 2px 2px 2px 2px rgb(220, 220, 220); 
-    -moz-box-shadow:    2px 2px 2px 2px #ccc;  
-    box-shadow:         2px 2px 2px 2px #ccc;  
-
-  
+    -moz-box-shadow:    2px 2px 2px 2px rgb(255, 255, 255);  
+    box-shadow:         2px 2px 2px 2px rgb(255, 255, 255);  
+    position: relative; 
+    background-color: transparent;
+    
+          
   }
   .title{
     font-weight: lighter;

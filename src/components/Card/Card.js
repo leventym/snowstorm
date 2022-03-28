@@ -19,6 +19,7 @@ function Card(props) {
         {props.temperature && (
         <div className="card--text">{props.weatherText}</div>
         )}
+        
           {props.temperature && (
           <div className="display-4 my-4">
           <span>{props.temperature} °C</span>

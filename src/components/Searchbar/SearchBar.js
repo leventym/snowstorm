@@ -8,9 +8,10 @@ function SearchBar(props) {
     const [cities, setCities] = useState([]);
 
 
-
-  const [temperature, setTemperature] = React.useState("");
-  const [weatherText, setweatherText] = React.useState("");
+    const [weatherIcon, setWeatherIcon] = React.useState("");
+    const [isDayTime, setIsDayTime] = React.useState("");
+    const [temperature, setTemperature] = React.useState("");
+    const [weatherText, setweatherText] = React.useState("");
  
  
   React.useEffect(() => {
@@ -30,13 +31,15 @@ function SearchBar(props) {
 
 
   const getWeather = async (id) => {
-  const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
-  const query = `${id}?apikey=${props.apiKey}`;
-    
-  const response = await fetch(base + query);
-  const data = await response.json();
-  setTemperature(data[0].Temperature.Metric.Value);
-  setweatherText(data[0].WeatherText);
+      const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
+      const query = `${id}?apikey=${props.apiKey}`;
+        
+      const response = await fetch(base + query);
+      const data = await response.json();
+      setWeatherIcon(data[0].WeatherIcon);
+      setIsDayTime(data[0].IsDayTime);
+      setTemperature(data[0].Temperature.Metric.Value);
+      setweatherText(data[0].WeatherText);
         return data[0]
 
     }
@@ -86,6 +89,8 @@ function SearchBar(props) {
                 <button id="btn" className="btn" type="submit" value="Submit" onClick={addCity}>Sök</button>
             </form>
                 <Card
+                weatherIcon={weatherIcon}
+                isDayTime={isDayTime}
                 city={theCity}
                 temperature={temperature}
                 weatherText={weatherText}/>

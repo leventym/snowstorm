@@ -5,8 +5,8 @@ import Geolocation from "../Geolocation/Geolocation";
 
 function HeadComponent() {
 
-    const apiKey = '	uP0LPCDTsOEMaaaAxeXzWbyFJMr7cUHP'
-    
+    const apiKey = 'AVNRiXSZXL4Dm5NLrAXXKaeujZQnvYUn'
+
       return (
         <div className="App">
           <header className="App-header">
@@ -26,10 +26,10 @@ function HeadComponent() {
             apiKey={apiKey}/>
             <BigCities city="Hanoi"
             apiKey={apiKey} />
-            <BigCities city="Rome"
+            {/* <BigCities city="Rome"
             apiKey={apiKey} />
             <BigCities city="Berlin"
-            apiKey={apiKey} />
+            apiKey={apiKey} /> */}
         </div>
         </div>
       );

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import './LastSearched.css'
 
 function LastSearched(props) {
   const [cities, setCities] = useState([]);
@@ -37,11 +38,13 @@ function LastSearched(props) {
       <button id="btn" onClick={addCity}>
         Click here
       </button>
+      
       <ul>
         {cities.map((city) => (
           <li key={city}>{city}</li>
         ))}
       </ul>
+      
     </div>
   );
 }

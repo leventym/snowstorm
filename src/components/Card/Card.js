@@ -19,9 +19,9 @@ function Card(props) {
         {props.temperature && (
         <div className="card--text">{props.weatherText}</div>
         )}
-        
           {props.temperature && (
-          <div className="display-4 my-4">
+          <div className="display-6 my-1">
+
           <span>{props.temperature} °C</span>
           </div>
           )}
@@ -32,3 +32,4 @@ function Card(props) {
 }
 
 export default Card
+

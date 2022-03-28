@@ -7,8 +7,13 @@ function App() {
 
   return (
     <div className="App">
-      <HeadComponent/>
+     
+         
+    <HeadComponent/>
+  
     </div>
+      
+    
   );
 }
 

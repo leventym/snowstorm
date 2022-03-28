@@ -2,16 +2,20 @@ import React, {useState } from "react";
 import "./SearchBar.css";
 import Card from "../Card/Card";
 
+
+
 function SearchBar(props) {
     const [searchthis, setSearchthis] = useState("");
     const [theCity, setTheCity] = useState([]);
     const [cities, setCities] = useState([]);
 
 
-    const [weatherIcon, setWeatherIcon] = React.useState("");
-    const [isDayTime, setIsDayTime] = React.useState("");
-    const [temperature, setTemperature] = React.useState("");
-    const [weatherText, setweatherText] = React.useState("");
+
+  const [temperature, setTemperature] = React.useState("");
+  const [weatherText, setweatherText] = React.useState("");
+  const [weatherIcon, setWeatherIcon] = React.useState("");
+  const [isDayTime, setIsDayTime] = React.useState("");
+
  
  
   React.useEffect(() => {
@@ -31,15 +35,16 @@ function SearchBar(props) {
 
 
   const getWeather = async (id) => {
-      const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
-      const query = `${id}?apikey=${props.apiKey}`;
-        
-      const response = await fetch(base + query);
-      const data = await response.json();
-      setWeatherIcon(data[0].WeatherIcon);
-      setIsDayTime(data[0].IsDayTime);
-      setTemperature(data[0].Temperature.Metric.Value);
-      setweatherText(data[0].WeatherText);
+  const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
+  const query = `${id}?apikey=${props.apiKey}`;
+    
+  const response = await fetch(base + query);
+  const data = await response.json();
+  setWeatherIcon(data[0].WeatherIcon);
+  setIsDayTime(data[0].IsDayTime);
+  setTemperature(data[0].Temperature.Metric.Value);
+  setweatherText(data[0].WeatherText);
+
         return data[0]
 
     }
@@ -82,21 +87,26 @@ function SearchBar(props) {
 
     
    return (
-
+        
         <div className='search'> 
             <form onSubmit={handleSubmit}>
                 <input id="cityText" type="text" value={searchthis} onChange={e => setSearchthis(e.target.value)} />
                 <button id="btn" className="btn" type="submit" value="Submit" onClick={addCity}>Sök</button>
             </form>
+            
+            <div className="flexbox-container">
                 <Card
-                weatherIcon={weatherIcon}
-                isDayTime={isDayTime}
+                 weatherIcon={weatherIcon}
+                 isDayTime={isDayTime}
                 city={theCity}
                 temperature={temperature}
                 weatherText={weatherText}/>
-        <h1>Previous searches</h1>
-        <ul>
-        {cities.map((city) => (
+                
+          <ul>
+        <b>Senaste sökningar</b>
+          {cities.map((city) => (
+          <li key={city}>{city}</li>
+
           
           <li key={city} onClick={(city) => {
             localStorage.removeItem(city.target.innerText);
@@ -104,6 +114,8 @@ function SearchBar(props) {
           }}>{city}</li>
         ))}
       </ul>
+      
+    </div>
     </div>
 
     )
